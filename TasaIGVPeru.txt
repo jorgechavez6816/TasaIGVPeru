@@ -1,0 +1,14 @@
+Option Explicit
+Function TasaIGVPeru(date1 As Date) As Double
+Dim myVal As Double
+myVal = DateValue(date1	)
+	If myVal >= DateValue("2011/03/01") Then
+		tasaigvperu = 0.180
+	ElseIf myVal < DateValue("2011/03/01") And myVal >= DateValue("2003/08/01") Then
+		tasaigvperu = 0.190
+	ElseIf myVal < DateValue("2003/08/01") And myVal >= DateValue("1992/03/01") Then
+		tasaigvperu = 0.180
+	Else		
+		tasaigvperu = 0.160
+	End If
+End Function
